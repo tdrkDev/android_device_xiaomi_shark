@@ -23,7 +23,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.widget.Switch;
+import android.widget.CompoundButton;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
@@ -31,7 +31,6 @@ import androidx.preference.SeekBarPreference;
 import androidx.preference.ListPreference;
 
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.lineageos.settings.device.R;
 
@@ -40,7 +39,7 @@ import org.lineageos.settings.device.utils.SettingsUtils;
 import org.lineageos.settings.device.logo.LogoUtil;
 
 public class LogoFragment extends PreferenceFragment implements
-        Preference.OnPreferenceChangeListener, OnMainSwitchChangeListener,
+        Preference.OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener,
         SharedPreferences.OnSharedPreferenceChangeListener {
     public static final String KEY_LOGO_ENABLE = "logo_control_enable";
     public static final String KEY_LOGO_MODE = "logo_control_mode";
@@ -117,7 +116,7 @@ public class LogoFragment extends PreferenceFragment implements
     }
 
     @Override
-    public void onSwitchChanged(Switch switchView, boolean enabled) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean enabled) {
         SettingsUtils.setEnabled(getActivity(), KEY_LOGO_ENABLE, enabled);
 
         LogoUtil.turnOff();
