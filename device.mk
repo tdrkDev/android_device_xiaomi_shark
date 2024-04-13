@@ -77,6 +77,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     $(LOCAL_PATH)/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0.vendor
+
 # Treble
 PRODUCT_USE_VNDK_OVERRIDE := true
 
