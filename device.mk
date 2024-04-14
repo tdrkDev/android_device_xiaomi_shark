@@ -70,6 +70,10 @@ PRODUCT_PACKAGES += \
 # Device init scripts
 PRODUCT_PACKAGES += \
     init.target.rc
+    
+# Fingerprint
+PRODUCT_PACKAGES += \
+    vendor.goodix.hardware.fingerprintextension@1.0.vendor
 
 # GPS
 PRODUCT_COPY_FILES += \
